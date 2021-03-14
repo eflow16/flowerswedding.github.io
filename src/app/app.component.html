@@ -1,57 +1,46 @@
 <div class="container">
   <div class="row justify-content-md-center text-center">
-      <div class="col-12 bg-info " >
-          <form (ngSubmit)="onSubmit()">
-            <div class="text-center">
-                <img src="../assets/Main.jpg" class="rounded" alt="Main" width="600" height="400">
-              </div>
-          
-              <h1>Flowers Wedding Seating Chart</h1>
-              <h3>Please Search For Your Name</h3>
-              
-                <div class="mx-auto input-group w-25 mt-3">
-                    <input type="text" name="nameInput" placeholder="First and Last Name" [(ngModel)]="name" aria-label="First and Last Name" >
-                    <div class="input-group-append">
-                        <button class="btn btn-primary" type="button" type="submit">Search</button>
-                    </div>
-                </div>
-                
-              <div *ngIf="showNotFound" class="Jumbotron">
-                  
-                  <h1 class="display-4">You are a WEDDING CRASHER!</h1>
-              </div>
+      <div class="col-12  " >
+        <div class="text-center">
+            <img src="assets/Main2.jpg" class="rounded mt-4" alt="Main" >
+            </div>
+        
+            <!-- <h3 class="title">Seating Chart Search</h3> -->
 
-              <div *ngIf="foundPerson">
-                <h1>{{foundPerson.name}}</h1>
-                <h3>Your table number is {{foundPerson.tableNumber}}</h3>
-                <h4>Your pic is this {{foundPerson.picture}}</h4>
-              </div>
-
-              <ul class="list-group mt-3">
-                <li class="list-group-item btn btn-hover" (click)="showPerson(i)"  *ngFor="let ppl of seatingList; let i = index; let even = even; let odd = odd;" href="#" [ngClass]="{ 'bg-light': odd, '': even}">
-                    {{ ppl.name }} - Table: {{ppl.tableNumber}}
-                </li>
-              </ul>
-
-              <!-- <div id="accordion">
-                <div class="card">
-                  <div class="card-header" id="headingOne">
+            <input class="w-100 mt-4 mb-4" type="text" name="nameInput" placeholder="Start typing your name (Escriba su nombre)" autocomplete="off" [(ngModel)]="name" aria-label="Name" (keyup)="searchData($event)">
+            
+            <div *ngIf="searchResultsList.length" class="accordion mb-4" id="accordion">
+                <div class="card" *ngFor="let ppl of searchResultsList; let i = index; let even = even; let odd = odd;" [ngClass]="{ 'bg-light': odd, '': even}">
+                    <div class="card-header" id="headingOne{{i}}">
                     <h5 class="mb-0">
-                      <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne{{i}}" aria-expanded="true" aria-controls="collapseOne">
-                        Collapsible Group Item #1
-                      </button>
+                        <button type="button" class="btn w-100" data-toggle="collapse" [attr.data-target]="'#collapseOne' + i" aria-expanded="false" [attr.aria-controls]="'collapseOne' + i">
+                        {{ ppl.name }}
+                        </button>
                     </h5>
-                  </div>
-              
-                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                    <div class="card-body">
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
                     </div>
-                  </div>
-                </div>
-              </div> -->
+                
+                    <div id="collapseOne{{i}}" class="collapse" [attr.aria-labelledby]="'headingOne' + i" data-parent="#accordion">
+                    <div class="card-body">
+                        <h5>Table Number: {{ppl.tableNumber}}</h5>
+                        <ul class="mt-1 pl-0" style="list-style-type:none;">
+                            <li *ngFor="let member of ppl.tableMembers; let i = index; let even = even; let odd = odd;" [ngClass]="{ 'gold-color': odd, 'navy-color': even}">
+                                {{ member}}
+                            </li>
+                          </ul>
+                        <img [src]="'assets/Table' + ppl.tableNumber + '.jpg'" class="rounded mt-4" width="300" height="150">
 
-          </form>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="showNotFound" class="Jumbotron">
+                
+                <h1 class="display-4">You are a WEDDING CRASHER!</h1>
+                <!-- <div id="overlay"></div> -->
+                <img  src="assets/crashers.gif" height="250" width="300" >
+            </div>
+
       </div>
   </div>
 </div>

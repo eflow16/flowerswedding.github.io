@@ -1,5 +1,14 @@
-.center-block {
-    display: table;  /* Instead of display:block */
-    margin-left: auto;
-    margin-right: auto;
+.gold-color {
+    background-color:#AF8700;
+    color: white;
+}
+
+.navy-color {
+    background-color:#00028d;
+    color: white;
+}
+
+.title {
+    color:#AF8700; 
+    text-shadow: 1px 1px #4d4d4d;
 }
