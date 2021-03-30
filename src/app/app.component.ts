@@ -14,6 +14,7 @@ export class AppComponent {
   constructor() {
     //Initialize value to false
       this.seatingList = this.getSeatingList();
+      console.log('Total Guests: '+ this.seatingList.length);
       this.searchResultsList = new Array<SeatAssignments>();
   }
 
@@ -44,7 +45,7 @@ export class AppComponent {
         tableNumber: 1
       },
       <SeatAssignments>{
-        name: "Chelsea DeJesus",
+        name: "Chelsea De Jesus",
         tableNumber: 1
       },
       <SeatAssignments>{
@@ -256,10 +257,6 @@ export class AppComponent {
         tableNumber: 6
       },
       <SeatAssignments>{
-        name: "James Edwards",
-        tableNumber: 6
-      },
-      <SeatAssignments>{
         name: "Betty Flowers",
         tableNumber: 6
       },
@@ -280,7 +277,7 @@ export class AppComponent {
         tableNumber: 6
       },
       <SeatAssignments>{
-        name: "Jeffy Flowers",
+        name: "Jeff Flowers Jr.",
         tableNumber: 6
       },
       <SeatAssignments>{
@@ -337,19 +334,11 @@ export class AppComponent {
       },
       <SeatAssignments>{
         name: "Agnes McCoy",
-        tableNumber: 8
-      },
-      <SeatAssignments>{
-        name: "Zanolee Martin",
-        tableNumber: 8
-      },
-      <SeatAssignments>{
-        name: "Robyn Martin",
-        tableNumber: 8
+        tableNumber: 6
       },
       <SeatAssignments>{
         name: "Daniella Umana Powell",
-        tableNumber: 8
+        tableNumber: 6
       },
       <SeatAssignments>{
         name: "Andres Hidalgo",
@@ -380,52 +369,32 @@ export class AppComponent {
         tableNumber: 9
       },
       <SeatAssignments>{
-        name: "Max Lora",
-        tableNumber: 9
-      },
-      <SeatAssignments>{
-        name: "Karen Seng",
-        tableNumber: 9
-      },
-      <SeatAssignments>{
-        name: "Steven Glaria",
-        tableNumber: 9
-      },
-      <SeatAssignments>{
         name: "Jeff Flowers",
-        tableNumber: 10
+        tableNumber: 8
       },
       <SeatAssignments>{
         name: "Mondra Flowers",
-        tableNumber: 10
+        tableNumber: 8
       },
       <SeatAssignments>{
         name: "Audie Flowers",
-        tableNumber: 10
+        tableNumber: 8
       },
       <SeatAssignments>{
         name: "Jackie Flowers",
-        tableNumber: 10
+        tableNumber: 8
       },
       <SeatAssignments>{
         name: "Terry Flowers",
-        tableNumber: 10
+        tableNumber: 8
       },
       <SeatAssignments>{
         name: "Joy Flowers",
-        tableNumber: 10
-      },
-      <SeatAssignments>{
-        name: "Donna Edwards",
-        tableNumber: 10
-      },
-      <SeatAssignments>{
-        name: "Perry Edwards",
-        tableNumber: 10
+        tableNumber: 8
       },
       <SeatAssignments>{
         name: "Lorna Miller",
-        tableNumber: 10
+        tableNumber: 8
       },
       <SeatAssignments>{
         name: "Will Reyes",
@@ -437,14 +406,6 @@ export class AppComponent {
       },
       <SeatAssignments>{
         name: "Steven Guevara",
-        tableNumber: 11
-      },
-      <SeatAssignments>{
-        name: "Andres Felipe Galvis",
-        tableNumber: 11
-      },
-      <SeatAssignments>{
-        name: "Maria Paulina Uribe",
         tableNumber: 11
       },
       <SeatAssignments>{
@@ -465,35 +426,35 @@ export class AppComponent {
       },
       <SeatAssignments>{
         name: "Wellington Fernandez",
-        tableNumber: 12
+        tableNumber: 10
       },
       <SeatAssignments>{
         name: "Eliza Pimpentel-Nivar",
-        tableNumber: 12
+        tableNumber: 10
       },
       <SeatAssignments>{
         name: "Richard Nivar",
-        tableNumber: 12
+        tableNumber: 10
       },
       <SeatAssignments>{
         name: "Maria Nivar",
-        tableNumber: 12
+        tableNumber: 10
       },
       <SeatAssignments>{
         name: "Janaisa Nivar",
-        tableNumber: 12
+        tableNumber: 10
       },
       <SeatAssignments>{
         name: "Rutdileny Cabrera",
-        tableNumber: 12
+        tableNumber: 10
       },
       <SeatAssignments>{
         name: "Rudy Cabrera",
-        tableNumber: 12
+        tableNumber: 10
       },
       <SeatAssignments>{
         name: "Rocio Cabrera",
-        tableNumber: 12
+        tableNumber: 10
       }
     ];
 

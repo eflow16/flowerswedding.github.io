@@ -2,12 +2,12 @@
   <div class="row justify-content-md-center text-center">
       <div class="col-12  " >
         <div class="text-center">
-            <img src="assets/Main2.jpg" class="rounded mt-4" alt="Main" >
+            <img src="assets/Main3.jpg" class="rounded mt-4" alt="Main" >
             </div>
         
-            <!-- <h3 class="title">Seating Chart Search</h3> -->
+            <h2 class="title mt-3">Seating Chart Search</h2>
 
-            <input class="w-100 mt-4 mb-4" type="text" name="nameInput" placeholder="Start typing your name (Escriba su nombre)" autocomplete="off" [(ngModel)]="name" aria-label="Name" (keyup)="searchData($event)">
+            <input class="w-100 mt-2 mb-4" type="text" name="nameInput" placeholder="Start typing your name (Escriba su nombre)" autocomplete="off" [(ngModel)]="name" aria-label="Name" (keyup)="searchData($event)">
             
             <div *ngIf="searchResultsList.length" class="accordion mb-4" id="accordion">
                 <div class="card" *ngFor="let ppl of searchResultsList; let i = index; let even = even; let odd = odd;" [ngClass]="{ 'bg-light': odd, '': even}">
